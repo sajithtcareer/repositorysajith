@@ -5,7 +5,14 @@
 			{
 				"name": "Execute FileCopy",
 				"type": "ExecutePipeline",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "wait for 1 sec",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
@@ -19,6 +26,15 @@
 							"type": "Expression"
 						}
 					}
+				}
+			},
+			{
+				"name": "wait for 1 sec",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 2
 				}
 			}
 		],
