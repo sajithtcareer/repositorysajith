@@ -1,0 +1,40 @@
+{
+	"name": "AzureSqlTable_Sales_Target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkservicemssql",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Sales"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "visit_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "first_name",
+				"type": "varchar"
+			},
+			{
+				"name": "last_name",
+				"type": "varchar"
+			},
+			{
+				"name": "visited_at",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales_target"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

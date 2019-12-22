@@ -1,0 +1,27 @@
+{
+	"name": "EventTRiggerForFileCopy",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "FileCopy",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"FileName": "@triggerBody().filename"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/blobtestcontainer5/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/15a07273-adaa-4f2e-a5db-4a842044d247/resourceGroups/TesResourceGroup/providers/Microsoft.Storage/storageAccounts/storageaccount100002",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
