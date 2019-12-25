@@ -1,0 +1,10 @@
+{
+	"name": "SajithKeyValultLinkedService",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://SajithKeyVault1000.vault.azure.net/"
+		}
+	}
+}
